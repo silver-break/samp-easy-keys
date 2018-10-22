@@ -23,6 +23,7 @@ forward OnPlayerClickN(playerid);
 forward OnPlayerClickH(playerid);
 forward OnPlayerClickAlt(playerid);
 forward OnPlayerClickEnter(playerid);
+forward OnPlayerClickSprint(playerid);
 forward OnPlayerClickSubmission(playerid);
 
 public	OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
@@ -47,6 +48,10 @@ public	OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
     {
     	return CallLocalFunction("OnPlayerClickEnter", "d", playerid);
     }
+	else if (PRESSED(KEY_SPRINT))
+	{
+		return CallLocalFunction("OnPlayerClickSprint", "d", playerid);
+	}
 	else if(PRESSED(KEY_SUBMISSION))
 	{
 		return CallLocalFunction("OnPlayerClickSubmission", "d", playerid);
